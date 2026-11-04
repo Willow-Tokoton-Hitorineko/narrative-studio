@@ -6,7 +6,7 @@
   <meta name="description" content="从一句改写，到一部长篇。Narrative Studio 是本地优先的中文写作工作台。">
   <meta property="og:title" content="Narrative Studio · 写作间">
   <meta property="og:description" content="这一句，由你决定要不要改。">
-  <meta property="og:image" content="https://willow-tokoton-hitorineko.github.io/narrative-studio/media/atelier-fanart-poster.png">
+  <meta property="og:image" content="https://willow-tokoton-hitorineko.github.io/narrative-studio/media/atelier-uhd-poster.png">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="media/atelier-stage.svg" type="image/svg+xml">
   <title>Narrative Studio · 写作间</title>
@@ -18,12 +18,12 @@
     header{border-bottom:1px solid var(--line)}header .shell{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:66px}
     .brand{font:600 1.28rem Georgia,serif;text-decoration:none}.stamp{font-size:.73rem;letter-spacing:.15em;color:var(--gold);font-weight:650}
     .hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,32vw,410px);gap:28px;align-items:center;padding:clamp(28px,6vw,68px) 0 30px}
-    .hero img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 18px #09101a80)}.hero-art small{display:block;color:var(--gold);text-align:center;font-size:.72rem;margin-top:7px}h1,h2,h3{font-family:"Songti SC","SimSun",Georgia,serif}
+    .hero img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 18px #09101a80)}h1,h2,h3{font-family:"Songti SC","SimSun",Georgia,serif}
     h1{font-size:clamp(2.55rem,6vw,5.1rem);line-height:1.12;letter-spacing:-.035em;margin:12px 0 16px}
     .lead{color:var(--muted);font-size:clamp(.96rem,1.7vw,1.1rem);max-width:38rem;margin:0 0 22px}
     .actions{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-block;border:1px solid var(--line);border-radius:5px;padding:7px 15px;text-decoration:none;font-size:.92rem;font-weight:660}.primary{background:var(--gold);color:#141d30;border-color:var(--gold)}
     .film{margin:0 0 50px}.screen{position:relative;border:1px solid #bea87c8c;box-shadow:0 15px 42px #080f19ac;border-radius:12px;overflow:hidden;background:#172237}
-    video{display:block;width:100%;height:auto;aspect-ratio:8/5}.play{position:absolute;inset:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer}.play[hidden]{display:none}
+    video{display:block;width:100%;height:auto;aspect-ratio:16/9}.play{position:absolute;inset:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer}.play[hidden]{display:none}
     .play span{display:grid;grid-auto-flow:column;gap:10px;align-items:center;border:1px solid #f1dbac80;border-radius:99px;background:#172237f0;color:var(--cream);padding:11px 20px;font:650 .93rem system-ui;box-shadow:0 8px 32px #050b1680}
     figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 0;color:var(--muted);font-size:.85rem}
     h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 16px}.routes{padding-bottom:52px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -42,17 +42,17 @@
         <p class="lead">打开一份旧稿，选中那句一直不满意的话。给出你的改法，对照候选，再决定要不要换掉原文。也可以从一句灵感开始，慢慢写成一部长篇。</p>
         <div class="actions"><a class="btn primary" href="#film">看一次实际改写</a><a class="btn" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio#快速试用">在本机试用</a></div>
       </div>
-      <div class="hero-art"><img src="media/atelier-fanart.webp" alt="蓝发人物在旧剧场伏案执笔的二创插画" width="300" height="290"><small>非官方二创 · 个人非营利展示</small></div>
+      <div class="hero-art"><img src="media/atelier-portrait.webp" alt="蓝发人物在旧剧场伏案执笔" width="1215" height="1295"></div>
     </section>
     <figure class="film" id="film">
       <div class="screen">
-        <video controls playsinline preload="none" poster="media/atelier-fanart-poster.png" width="1280" height="800" aria-label="实录演示：选择一句正文，输入改写指令，比较候选，确认替换并撤销">
-          <source src="media/atelier-fanart-film.mp4" type="video/mp4">
-          <a href="media/atelier-fanart-film.mp4">打开演示视频</a>
+        <video controls playsinline preload="none" poster="media/atelier-uhd-poster.png" width="3840" height="2160" aria-label="实录演示：选择一句正文，输入改写指令，比较候选，确认替换并撤销">
+          <source src="media/atelier-uhd-film.mp4" type="video/mp4">
+          <a href="media/atelier-uhd-film.mp4">打开演示视频</a>
         </video>
         <button class="play" type="button" hidden><span>▶　播放工作台实录</span></button>
       </div>
-      <figcaption><span>《末班车没有到站》虚构样稿 · 连续实录 · 本地二创主题 · 离线 Mock</span><a href="media/atelier-fanart-poster.png">查看静态画面</a></figcaption>
+      <figcaption><span>《末班车没有到站》 · 工作台实录 · 离线演示</span><a href="media/atelier-uhd-film.mp4">打开 4K 视频</a></figcaption>
     </figure>
     <section class="routes">
       <h2>接着写，或者重新开始</h2>
@@ -63,7 +63,7 @@
       </div>
     </section>
   </main>
-  <footer><div class="shell">Willow 的猫箱 · 开发预览 · <a href="credits.html">二创素材与许可说明</a> · <a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues">分享试用反馈</a></div></footer>
+  <footer><div class="shell">Willow 的猫箱 · 开发预览 · <a href="credits.html">插画与许可</a> · <a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues">分享试用反馈</a></div></footer>
   <script>
     const video = document.querySelector('video');
     const play = document.querySelector('.play');
