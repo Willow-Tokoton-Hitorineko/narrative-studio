@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/narrative-canon.v1.json",
+  "title": "NarrativeCanonBundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "project_id",
+    "created_at",
+    "updated_at",
+    "entities",
+    "evidence",
+    "assertions",
+    "events",
+    "knowledge",
+    "relationships",
+    "foreshadowing"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "bundle_id": {
+      "type": "string",
+      "pattern": "^ncan_[a-z0-9]{8,40}$"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "knowledge": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "foreshadowing": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@narrative-studio/editorial",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gate 3B deterministic context compiler, hunk validator and dispoable candidate review store (no model write path).",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@narrative-studio/contracts": "workspace:*",
+    "@narrative-studio/core": "workspace:*",
+    "@narrative-studio/narrative": "workspace:*",
+    "@narrative-studio/voice": "workspace:*",
+    "@narrative-studio/coevolution": "workspace:*",
+    "@narrative-studio/planning": "workspace:*"
+  }
+}

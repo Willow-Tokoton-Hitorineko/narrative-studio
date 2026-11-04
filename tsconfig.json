@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@narrative-studio/contracts": ["./packages/contracts/src/index.ts"],
+      "@narrative-studio/core": ["./packages/core/src/index.ts"],
+      "@narrative-studio/projection": ["./packages/projection/src/index.ts"],
+      "@narrative-studio/jobs": ["./packages/jobs/src/index.ts"],
+      "@narrative-studio/narrative": ["./packages/narrative/src/index.ts"],
+      "@narrative-studio/voice": ["./packages/voice/src/index.ts"],
+      "@narrative-studio/editorial": ["./packages/editorial/src/index.ts"],
+      "@narrative-studio/coevolution": ["./packages/coevolution/src/index.ts"],
+      "@narrative-studio/planning": ["./packages/planning/src/index.ts"],
+      "@narrative-studio/continuation": ["./packages/continuation/src/index.ts"],
+      "@narrative-studio/literary": ["./packages/literary/src/index.ts"]
+    }
+  },
+  "include": [
+    "packages/*/src/**/*.ts",
+    "apps/*/src/**/*.ts",
+    "tests/**/*.ts",
+    "vitest.config.ts"
+  ],
+  "exclude": ["apps/studio/**"]
+}

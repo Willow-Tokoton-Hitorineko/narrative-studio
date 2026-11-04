@@ -1,0 +1,37 @@
+/* The AI is a real workspace. Split proportions apply only when explicitly chosen. */
+.workspace-layout-bar{display:flex;align-items:center;gap:6px;flex:none;min-height:38px;padding:0 0 9px;font-size:12px;}
+.workspace-layout-bar>span{margin-right:auto;max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);}
+.app .workspace-layout-bar button{padding:5px 11px;font-size:11px;background:transparent;border-color:transparent;box-shadow:none;transform:none;}
+.app .workspace-layout-bar button[aria-pressed=true]{background:var(--paper);border-color:var(--line);color:var(--accent);}
+.editor-column.ai-workspace-full .paper{display:none;}
+.editor-column.ai-workspace-full .prompt-workspace{flex:1;height:auto;max-height:none;min-height:0;margin-bottom:0;}
+.editor-column.ai-workspace-full{padding-top:12px;}
+.ai-view-tabs{display:flex;align-items:center;gap:4px;flex:none;min-height:38px;padding:0 16px;border-bottom:1px solid var(--line);}
+.app .ai-view-tabs>button{font-size:12px;background:transparent;border:0;border-bottom:2px solid transparent;border-radius:0;box-shadow:none;transform:none;padding:9px 12px;}
+.app .ai-view-tabs>button[aria-pressed=true]{border-bottom-color:var(--accent);color:var(--accent);}
+.ai-view-tabs>span{font-size:10px;color:var(--muted);margin-left:auto;}
+.ai-conversation-scroll[hidden],.review-view[hidden]{display:none!important;}
+.review-view{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;overflow-anchor:none;padding:0 24px;}
+.review-view .draft-result{width:100%;max-width:900px;margin:0 auto;min-height:100%;padding:22px 28px 45px;border:0;box-shadow:none;animation:none;}
+.review-view .draft-result-head{margin-bottom:12px;}
+.review-view .draft-prose{font:400 var(--body-size,17px)/var(--body-leading,1.95) var(--font-body,var(--font-serif));max-height:none;overflow:visible;padding:6px 0 18px;}
+.review-view .draft-actions{position:sticky;top:0;z-index:3;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);margin:0 0 12px;min-height:49px;}
+.review-view .draft-actions .sticky-target{margin-right:auto;font-size:11px;color:var(--muted);}
+.review-view .draft-note{font-size:12px;}
+.review-compose-closed{flex:none;display:flex;align-items:center;gap:12px;padding:8px 18px;border-top:1px solid var(--line);min-height:48px;}
+.review-compose-closed>button:first-child{flex:1;text-align:left;background:var(--paper-soft);font-size:12px;color:var(--muted);min-height:32px;}
+.candidate-ready{border:1px solid var(--line)!important;padding:16px!important;background:var(--paper-soft);}
+.candidate-ready>p{font-size:12px;color:var(--muted);}
+.candidate-ready button{font-size:12px;}
+.editor-column.ai-workspace-full .ai-conversation-scroll{padding:22px max(24px,calc((100% - 900px)/2));}
+.candidate-reading .prompt-settings{max-height:140px;}
+.book-grid.dialogue-wide{grid-template-columns:minmax(0,1fr);}
+.book-grid.dialogue-wide .book-canvas{display:none;}
+.book-grid.dialogue-wide .book-conversation{width:100%;max-width:1100px;margin:0 auto;}
+.book-grid.dialogue-wide .book-messages{padding-left:max(24px,calc((100% - 850px)/2));padding-right:max(24px,calc((100% - 850px)/2));}
+@media(max-height:650px){.workspace-layout-bar{min-height:32px;padding-bottom:6px;}.editor-column.ai-workspace-full{padding-top:6px;}.ai-view-tabs{min-height:32px;padding:0 10px;}.app .ai-view-tabs>button{padding:6px 9px;font-size:11px;}.review-view{padding:0 12px;}.review-view .draft-result{padding:14px 16px 30px;}.review-compose-closed{padding:5px 12px;min-height:40px;}.review-view .draft-actions{min-height:42px;padding:7px 0;}.review-view .draft-actions button{font-size:11px;padding:6px 10px;}}
+@media(max-width:650px){.workspace-layout-bar{gap:2px;flex-wrap:wrap;}.workspace-layout-bar>span{max-width:100%;flex-basis:100%;}.ai-view-tabs>span{display:none;}.review-view{padding:0 8px;}.review-view .draft-result{padding-left:8px;padding-right:8px;}.review-view .draft-actions .sticky-target{flex-basis:100%;}.review-compose-closed{gap:6px;}.book-grid.dialogue-wide .book-conversation{min-height:0;flex:1;}.book-grid.dialogue-wide{overflow:hidden;}}
+
+.review-status{flex:none;margin:0;padding:7px 18px;font-size:12px;border-top:1px solid var(--line);color:var(--accent);}
+
+.co-chat[hidden]{display:none!important;}

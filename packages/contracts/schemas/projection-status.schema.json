@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/projection-status.v1.json",
+  "title": "ProjectionStatus",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "source_revision",
+    "projection_revision",
+    "status",
+    "computed_at",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "source_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "projection_revision": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "current",
+        "stale",
+        "pending",
+        "failed"
+      ]
+    },
+    "computed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "details": {
+      "type": "object"
+    }
+  },
+  "$defs": {}
+}

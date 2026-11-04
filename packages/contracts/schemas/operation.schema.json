@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/operation.v1.json",
+  "title": "Operation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "operation_id",
+    "seq",
+    "project_id",
+    "type",
+    "created_at",
+    "actor",
+    "base_revision",
+    "result_revision",
+    "payload",
+    "approval_id",
+    "provenance",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "operation_id": {
+      "type": "string",
+      "pattern": "^op_[0-9]{8}_[0-9a-f]{12}$"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "type": {
+      "enum": [
+        "project.init",
+        "chapter.create",
+        "chapter.commit",
+        "import.apply",
+        "narrative.canon",
+        "voice.corpus",
+        "voice.constitution",
+        "coevolution.state",
+        "planning.state",
+        "approval.record"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "$ref": "#/$defs/actor"
+    },
+    "base_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "result_revision": {
+      "type": "string",
+      "pattern": "^prj_[0-9]{8}_[0-9a-f]{12}$"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "approval_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "status": {
+      "enum": [
+        "committed",
+        "recovered",
+        "rolled_back"
+      ]
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "actor_id"
+      ],
+      "properties": {
+        "source": {
+          "enum": [
+            "author",
+            "import",
+            "model",
+            "system",
+            "migration"
+          ]
+        },
+        "actor_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        }
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "author",
+            "agent",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@narrative-studio/coevolution",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gate 3C author-controlled preference observations, policy versions and growth loop; no model writes.",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "dependencies": {
+    "@narrative-studio/contracts": "workspace:*",
+    "@narrative-studio/core": "workspace:*"
+  }
+}

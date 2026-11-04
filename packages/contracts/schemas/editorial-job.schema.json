@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.example/schema/editorial-job.v1.json",
+  "title": "EditorialJob",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "job_id",
+    "project_id",
+    "base_revision",
+    "scope",
+    "mode",
+    "intent",
+    "max_cost",
+    "approved_voice_revision",
+    "permission_receipt_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "base_revision": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "chapter_id",
+        "span_ids"
+      ],
+      "properties": {
+        "chapter_id": {
+          "type": "string"
+        },
+        "span_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mode": {
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "intent": {
+      "type": "string"
+    },
+    "max_cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "approved_voice_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "permission_receipt_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "preference_policy_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "review",
+        "paused",
+        "failed",
+        "done"
+      ]
+    }
+  }
+}

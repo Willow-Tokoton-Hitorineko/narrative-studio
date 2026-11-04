@@ -1,0 +1,21 @@
+{
+  "name": "@narrative-studio/voice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gate 3A Voice Forge: licensed corpus registry, deterministic Chinese style profiles, evidence, proposals and Style Constitution support (local projection).",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "dependencies": {
+    "@narrative-studio/contracts": "workspace:*",
+    "@narrative-studio/core": "workspace:*"
+  }
+}

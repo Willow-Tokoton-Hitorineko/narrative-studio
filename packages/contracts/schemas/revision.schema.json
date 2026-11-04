@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/revision.v1.json",
+  "title": "Revision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "revision_id",
+    "project_id",
+    "chapter_id",
+    "seq",
+    "parent_revision_id",
+    "content_hash",
+    "byte_length",
+    "encoding",
+    "line_ending",
+    "created_at",
+    "actor",
+    "origin",
+    "message",
+    "approval_id",
+    "provenance",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "revision_id": {
+      "type": "string",
+      "pattern": "^rev_[0-9]{8}_[0-9a-f]{12}$"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "chapter_id": {
+      "type": "string",
+      "pattern": "^ch_[a-z0-9]{8,40}$"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parent_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "byte_length": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "encoding": {
+      "enum": [
+        "utf-8",
+        "utf-8-bom"
+      ]
+    },
+    "line_ending": {
+      "enum": [
+        "lf",
+        "crlf",
+        "mixed",
+        "none"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "$ref": "#/$defs/actor"
+    },
+    "origin": {
+      "enum": [
+        "author",
+        "import",
+        "model",
+        "system"
+      ]
+    },
+    "message": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2000
+    },
+    "approval_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "status": {
+      "enum": [
+        "committed",
+        "superseded"
+      ]
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "actor_id"
+      ],
+      "properties": {
+        "source": {
+          "enum": [
+            "author",
+            "import",
+            "model",
+            "system",
+            "migration"
+          ]
+        },
+        "actor_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        }
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "author",
+            "agent",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

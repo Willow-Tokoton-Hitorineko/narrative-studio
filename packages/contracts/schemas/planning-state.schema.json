@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/planning-state.v1.json",
+  "title": "PlanningState",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "version",
+    "ideas",
+    "plans",
+    "branches",
+    "genre_selections",
+    "forbidden_rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ideas": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "plans": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "genre_selections": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "forbidden_rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

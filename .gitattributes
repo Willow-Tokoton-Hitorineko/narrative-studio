@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.zip binary
+*.sqlite binary
+
+# All text files use LF so the working tree, `git archive` output and the
+# source inventory hash the exact same bytes. (PowerShell accepts LF scripts.)

@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/contracts/tsconfig.build.json" },
+    { "path": "./packages/core/tsconfig.build.json" },
+    { "path": "./packages/projection/tsconfig.build.json" },
+    { "path": "./packages/jobs/tsconfig.build.json" },
+    { "path": "./packages/narrative/tsconfig.build.json" },
+    { "path": "./packages/voice/tsconfig.build.json" },
+    { "path": "./packages/editorial/tsconfig.build.json" },
+    { "path": "./packages/coevolution/tsconfig.build.json" },
+    { "path": "./packages/planning/tsconfig.build.json" },
+    { "path": "./packages/continuation/tsconfig.build.json" },
+    { "path": "./packages/literary/tsconfig.build.json" },
+    { "path": "./apps/cli/tsconfig.build.json" }
+  ]
+}

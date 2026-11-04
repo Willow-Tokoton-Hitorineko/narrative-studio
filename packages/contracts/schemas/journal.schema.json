@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/journal.v1.json",
+  "title": "JournalTransaction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "txn_id",
+    "project_id",
+    "state",
+    "created_at",
+    "updated_at",
+    "pid",
+    "host",
+    "base_revision",
+    "target_revision",
+    "operation",
+    "files",
+    "manifest_after_hash",
+    "last_error",
+    "recovered_at",
+    "recovery_action"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "txn_id": {
+      "type": "string",
+      "pattern": "^txn_[a-z0-9]{8,40}$"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "state": {
+      "enum": [
+        "PREPARED",
+        "FILES_APPLIED",
+        "PORTABLE_COMMITTED",
+        "ROLLED_BACK",
+        "ROLLBACK_FAILED"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pid": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "host": {
+      "type": "string",
+      "minLength": 1
+    },
+    "base_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_revision": {
+      "type": "string",
+      "pattern": "^prj_[0-9]{8}_[0-9a-f]{12}$"
+    },
+    "operation": {
+      "$ref": "#/$defs/operation"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fileEntry"
+      }
+    },
+    "manifest_after_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "last_error": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4000
+    },
+    "recovered_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recovery_action": {
+      "enum": [
+        "none",
+        "redo",
+        "rollback",
+        "finalize",
+        "preserve"
+      ]
+    }
+  },
+  "$defs": {
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "author",
+            "agent",
+            "system"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "actor_id"
+      ],
+      "properties": {
+        "source": {
+          "enum": [
+            "author",
+            "import",
+            "model",
+            "system",
+            "migration"
+          ]
+        },
+        "actor_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 500
+        }
+      }
+    },
+    "operation": {
+      "title": "Operation",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "operation_id",
+        "seq",
+        "project_id",
+        "type",
+        "created_at",
+        "actor",
+        "base_revision",
+        "result_revision",
+        "payload",
+        "approval_id",
+        "provenance",
+        "status"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "operation_id": {
+          "type": "string",
+          "pattern": "^op_[0-9]{8}_[0-9a-f]{12}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "project_id": {
+          "type": "string",
+          "pattern": "^prj_[a-z0-9]{8,32}$"
+        },
+        "type": {
+          "enum": [
+            "project.init",
+            "chapter.create",
+            "chapter.commit",
+            "import.apply",
+            "narrative.canon",
+            "voice.corpus",
+            "voice.constitution",
+            "coevolution.state",
+            "planning.state",
+            "approval.record"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actor": {
+          "$ref": "#/$defs/actor"
+        },
+        "base_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_revision": {
+          "type": "string",
+          "pattern": "^prj_[0-9]{8}_[0-9a-f]{12}$"
+        },
+        "payload": {
+          "type": "object"
+        },
+        "approval_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "status": {
+          "enum": [
+            "committed",
+            "recovered",
+            "rolled_back"
+          ]
+        }
+      },
+      "$defs": {
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "actor_id"
+          ],
+          "properties": {
+            "source": {
+              "enum": [
+                "author",
+                "import",
+                "model",
+                "system",
+                "migration"
+              ]
+            },
+            "actor_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 200
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 500
+            }
+          }
+        },
+        "actor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "id"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "author",
+                "agent",
+                "system"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      }
+    },
+    "fileEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rel_path",
+        "mode",
+        "before_hash",
+        "after_hash",
+        "staged_path",
+        "backup_path",
+        "size"
+      ],
+      "properties": {
+        "rel_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "enum": [
+            "create",
+            "replace"
+          ]
+        },
+        "before_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "after_hash": {
+          "type": "string"
+        },
+        "staged_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "backup_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

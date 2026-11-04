@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.example/schema/preference-observation.v1.json",
+  "title": "PreferenceObservation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "feedback_id",
+    "project_id",
+    "editorial_job_id",
+    "chapter_revision",
+    "user_action",
+    "feedback_source",
+    "consent_scope",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "feedback_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editorial_job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edit_hunk_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scene_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "chapter_revision": {
+      "type": "string"
+    },
+    "voice_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "genre_context": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "edit_tactic": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_action": {
+      "enum": [
+        "accepted",
+        "rejected",
+        "modified",
+        "skipped",
+        "reverted"
+      ]
+    },
+    "feedback_source": {
+      "enum": [
+        "explicit",
+        "inferred"
+      ]
+    },
+    "reason_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "freeform_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "consent_scope": {
+      "enum": [
+        "no_learning",
+        "local_strategy_learning"
+      ]
+    },
+    "user_confirmed_rule": {
+      "type": "boolean"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

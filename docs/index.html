@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Narrative Studio 是一个本地优先的中文写作工作台。续写旧稿，从灵感起稿，由作者决定何时写入正文。">
+  <meta property="og:title" content="Narrative Studio · 写作间">
+  <meta property="og:description" content="把灵感聊清楚，把正文留在手上。">
+  <meta property="og:image" content="https://willow-tokoton-hitorineko.github.io/narrative-studio/media/author-flow.png">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="media/cover.svg" type="image/svg+xml">
+  <title>Narrative Studio · 写作间</title>
+  <style>
+    :root{color:#262732;background:#f4ede4;font:16px/1.65 system-ui,sans-serif;--wine:#783b50;--muted:#645761;--paper:#fffaf1;--line:#d9c7be}
+    *{box-sizing:border-box}body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid var(--wine);outline-offset:4px}
+    .shell{max-width:1120px;margin:auto;padding:0 clamp(18px,4vw,44px)}
+    .mast{border-bottom:1px solid var(--line)}.mast .shell{min-height:68px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+    .brand{text-decoration:none;font:600 1.23rem Georgia,serif}.repo{color:var(--wine);font-size:.9rem;text-underline-offset:4px}
+    .hero{position:relative;padding:clamp(40px,8vw,106px) 0 46px}.hero-art{position:absolute;right:1%;top:clamp(12px,4vw,64px);width:clamp(175px,25vw,280px);pointer-events:none}.hero-copy{max-width:72%}.stamp{font-weight:750;color:var(--wine);font-size:.76rem;letter-spacing:.18em}
+    h1{font:600 clamp(2.7rem,7.5vw,5.6rem)/1.04 Georgia,serif;letter-spacing:-.045em;margin:14px 0}
+    h2,h3{font-family:Georgia,"Songti SC","SimSun",serif}h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 14px}h3{margin:10px 0 0}
+    .tagline{font:600 clamp(1.24rem,3vw,1.7rem)/1.45 "Songti SC","SimSun",serif}.lead{max-width:46rem;color:var(--muted)}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{text-decoration:none;display:inline-block;border:1px solid var(--wine);padding:9px 16px;border-radius:7px;color:var(--wine);font-weight:680}.primary{background:var(--wine);color:white}
+    .demo{margin:0 0 56px;padding:clamp(10px,2.3vw,22px);border:1px solid var(--line);border-radius:15px;background:var(--paper);box-shadow:0 12px 30px #40323b18}
+    .demo img{display:block;width:100%;height:auto;border-radius:8px}.demo figcaption{padding:10px 3px 0;color:var(--muted);font-size:.86rem}
+    .routes{padding-bottom:60px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border-top:2px solid var(--wine);padding:18px;background:var(--paper)}.card p{color:var(--muted);margin-bottom:0}
+    footer{border-top:1px solid var(--line);padding:20px 0 38px;color:var(--muted);font-size:.88rem}
+    @media(max-width:680px){.cards{grid-template-columns:1fr}.mast .shell{min-height:54px}.hero{padding-bottom:26px}.hero-art{display:none}.hero-copy{max-width:none}}
+  </style>
+</head>
+<body>
+  <header class="mast"><div class="shell"><a class="brand" href="./">Narrative Studio</a><a class="repo" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio">GitHub ↗</a></div></header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="project">
+      <img class="hero-art" src="media/mascot.svg" alt="" width="300" height="290"><div class="hero-copy"><div class="stamp">写作间 / OPEN SOURCE / 开发预览</div>
+      <h1 id="project">Narrative Studio</h1>
+      <p class="tagline">把灵感聊清楚，把正文留在手上。</p>
+      <p class="lead">给中文长篇创作者的一张本地写作桌。带来一篇没写完的稿子，或带来一句还不成形的灵感。你可以先讨论、再看候选，最后自己决定要留下哪一段。</p>
+      <div class="actions"><a class="btn primary" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio#快速试用">在本机试用</a><a class="btn" href="#demo">看续写演示</a></div></div>
+    </section>
+    <figure class="demo" id="demo">
+      <picture><source media="(prefers-reduced-motion: reduce)" srcset="media/author-flow.png"><img src="media/author-flow.gif" width="1100" height="690" alt="从虚构样稿发起续写，查看候选，确认写入，再进入分步构思"></picture>
+      <figcaption>Windows Edge 实拍。画面使用虚构样稿与 Mock 固定示例。<a href="media/author-flow.png">静态画面</a></figcaption>
+    </figure>
+    <section class="routes" aria-labelledby="routes">
+      <h2 id="routes">今天想怎么写？</h2>
+      <div class="cards">
+        <article class="card"><span class="stamp">01 / CONTINUE</span><h3>接着旧稿写</h3><p>导入 TXT 或 Markdown，定位光标或选中文本。先看候选，确认后保存，也能撤销。</p></article>
+        <article class="card"><span class="stamp">02 / PLAN</span><h3>从一句灵感开始</h3><p>自由讨论，或按卡片梳理人物、关系和剧情。确认后把方案带进开篇。</p></article>
+        <article class="card"><span class="stamp">03 / EDIT</span><h3>留点空间给自己</h3><p>只打开正文也可以写、改、保存和导出。私人稿件保存在本机 Vault。</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell">Willow 的猫箱 · MIT 开源开发预览 · <a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues">反馈与建议</a></div></footer>
+</body>
+</html>

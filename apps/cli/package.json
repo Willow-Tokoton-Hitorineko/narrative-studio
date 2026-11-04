@@ -1,0 +1,28 @@
+{
+  "name": "@narrative-studio/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Narrative Studio command line interface (Gate 0).",
+  "license": "MIT",
+  "bin": {
+    "ns": "./dist/main.js"
+  },
+  "main": "./dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@narrative-studio/contracts": "workspace:*",
+    "@narrative-studio/core": "workspace:*",
+    "@narrative-studio/jobs": "workspace:*",
+    "@narrative-studio/narrative": "workspace:*",
+    "@narrative-studio/voice": "workspace:*",
+    "@narrative-studio/editorial": "workspace:*",
+    "@narrative-studio/coevolution": "workspace:*",
+    "@narrative-studio/projection": "workspace:*",
+    "@narrative-studio/planning": "workspace:*",
+    "@narrative-studio/continuation": "workspace:*",
+    "@narrative-studio/literary": "workspace:*"
+  }
+}

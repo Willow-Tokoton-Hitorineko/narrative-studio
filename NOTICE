@@ -1,0 +1,8 @@
+Narrative Studio is licensed under MIT. The vector artwork, sample chapter, and
+demo capture created for this public repository are distributed with the project
+under the same license. User manuscripts and local Vaults are separate.
+
+Dependencies are installed from the pinned pnpm lockfile. No third-party
+library bundles, character illustrations, dialogue, or fonts are vendored.
+React and CodeMirror are MIT; TypeScript is Apache-2.0. For full dependency
+attributions, see the packages' own license files after installation.

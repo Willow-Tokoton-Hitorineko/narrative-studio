@@ -1,0 +1,28 @@
+.planning-panel { width: min(980px, 94vw); }
+
+/* Gate 7 P0: readable literary AI surfaces */
+.ai-outline { margin-top: 14px; color: var(--ink, #2b2622); }
+.ai-outline-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; padding:18px 20px; border:1px solid rgba(120,95,70,.22); border-radius:16px; background:linear-gradient(135deg, rgba(255,252,246,.9), rgba(244,238,228,.7)); }
+.ai-outline-head h3 { margin:4px 0 6px; font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif; font-size:1.55rem; letter-spacing:.02em; }
+.ai-outline-head p { margin:0; line-height:1.75; color:#5d5349; }
+.ai-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:14px 0 18px; }
+.ai-facts > div { padding:12px 14px; border-radius:12px; background:rgba(247,242,233,.78); border:1px solid rgba(120,95,70,.14); }
+.ai-facts span { display:block; font-size:.72rem; letter-spacing:.08em; color:#8a7764; margin-bottom:5px; }
+.ai-facts p { margin:0; line-height:1.7; }
+.ai-outline h4 { margin:18px 0 8px; font-family:"Noto Serif SC","Source Han Serif SC",Georgia,serif; font-size:1.05rem; }
+.ai-characters { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }
+.ai-characters article { padding:12px 14px; border-radius:12px; border:1px solid rgba(120,95,70,.16); background:#fffdf9; }
+.ai-characters strong { font-size:1rem; margin-right:8px; }
+.ai-characters span { font-size:.75rem; color:#8a7764; }
+.ai-characters p { margin:6px 0 0; line-height:1.65; }
+.ai-volumes { display:grid; gap:12px; }
+.ai-volumes section { padding:12px 16px; border-left:3px solid #b08d6a; background:rgba(255,253,249,.8); border-radius:0 12px 12px 0; }
+.ai-volumes h5 { margin:0 0 8px; font-family:"Noto Serif SC","Source Han Serif SC",Georgia,serif; font-size:1rem; }
+.ai-volumes ol { margin:0; padding-left:20px; display:grid; gap:6px; }
+.ai-volumes li { line-height:1.6; }
+.ai-volumes li strong { margin-right:8px; }
+.ai-volumes li span { color:#5d5349; margin-right:8px; }
+.ai-volumes li small { color:#8a7764; }
+.ai-json { font-family:"Cascadia Mono",Consolas,monospace; font-size:.8rem; line-height:1.55; background:#fbf8f2; }
+pre.ai-prose { font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif; font-size:1rem; line-height:1.9; white-space:pre-wrap; padding:14px 16px; background:#fffdf8; border:1px solid rgba(120,95,70,.15); border-radius:12px; color:#2b2622; }
+@media (max-width:700px){ .ai-facts{grid-template-columns:1fr;} .ai-outline-head{flex-direction:column;} }

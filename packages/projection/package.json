@@ -1,0 +1,23 @@
+{
+  "name": "@narrative-studio/projection",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Device-local SQLite projection rebuilt deterministically from the portable Vault (never authoritative).",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@narrative-studio/contracts": "workspace:*",
+    "@narrative-studio/core": "workspace:*"
+  }
+}

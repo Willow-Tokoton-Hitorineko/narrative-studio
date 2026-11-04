@@ -1,0 +1,78 @@
+:root {
+  --content-width: 760px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --focus-ring: 0 0 0 2px var(--canvas), 0 0 0 4px var(--accent);
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+}
+
+html { text-rendering: optimizeLegibility; }
+body {
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--selection); color: var(--ink); }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(14px) saturate(1.08);
+  background: color-mix(in srgb, var(--paper-soft) 88%, transparent);
+}
+.top-actions { flex-wrap: wrap; row-gap: var(--space-2); }
+.top-actions select,
+.top-actions input,
+.top-actions button { min-height: 30px; }
+button, select, input, textarea { transition: border-color .16s var(--ease-out), background-color .16s var(--ease-out), color .16s var(--ease-out); }
+button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Writer: the manuscript remains the visual center, not the chrome. */
+.cm-content {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-block: clamp(28px, 5vh, 64px) 18vh;
+  line-height: var(--body-leading);
+}
+.cm-line { padding-inline: 2px; }
+.editor-title, .chapter-heading, .manuscript h1 { text-wrap: balance; }
+.sidebar, .rail, .narrative-panel { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+
+/* Atlas and review panels: readable at 200% without horizontal trapping. */
+.narrative-panel, .coevolution-panel, .planning-panel {
+  max-height: 94dvh;
+  overflow: auto;
+}
+.narrative-body { min-width: 0; }
+.relationship-graph { max-width: 100%; height: auto; }
+.narrative-grid, .editorial-diff, .coevolution-actions { min-width: 0; }
+.narrative-card, .editorial-hunk, .coevolution-item { overflow-wrap: anywhere; }
+.narrative-section-head h3, .narrative-card h3 { text-wrap: balance; }
+
+/* Status is never conveyed by color alone. */
+.narrative-badge::before, .save-pill .dot { content: ""; }
+.narrative-badge { gap: 5px; }
+
+@media (max-width: 1120px) {
+  .topbar { align-items: flex-start; }
+  .top-actions { justify-content: flex-end; }
+  .narrative-panel { width: min(96vw, 1000px); }
+}
+@media (max-width: 760px) {
+  .topbar { flex-wrap: wrap; gap: var(--space-2); }
+  .top-actions { flex: 1 1 100%; justify-content: flex-start; }
+  .narrative-panel { width: 100vw; height: 100dvh; border-radius: 0; }
+  .editorial-form, .editorial-diff { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

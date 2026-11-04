@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.local/schema/manifest.v1.json",
+  "title": "Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "vault_schema_version",
+    "project_id",
+    "title",
+    "seq",
+    "revision",
+    "head_revision",
+    "created_at",
+    "updated_at",
+    "generator",
+    "chapters",
+    "files"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "vault_schema_version": {
+      "const": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^prj_[a-z0-9]{8,32}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^prj_[0-9]{8}_[0-9a-f]{12}$"
+    },
+    "head_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "node"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "node": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "chapters": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/chapterEntry"
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/fileEntry"
+      }
+    }
+  },
+  "$defs": {
+    "chapterEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chapter_id",
+        "volume_id",
+        "title",
+        "ordinal",
+        "current_revision_id",
+        "content_hash",
+        "word_count",
+        "revision_seq",
+        "path",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "chapter_id": {
+          "type": "string",
+          "pattern": "^ch_[a-z0-9]{8,40}$"
+        },
+        "volume_id": {
+          "type": "string",
+          "pattern": "^vol_[a-z0-9]{6,32}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "current_revision_id": {
+          "type": "string",
+          "pattern": "^rev_[0-9]{8}_[0-9a-f]{12}$"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revision_seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "fileEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sha256",
+        "size"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

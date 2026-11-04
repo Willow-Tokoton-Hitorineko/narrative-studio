@@ -1,0 +1,10 @@
+.coevolution-panel { width: min(900px, 94vw); }
+.coevolution-body { gap: 12px; }
+.coevolution-consent { display: flex; align-items: center; gap: 8px; margin: 9px 0; font-size: 13px; }
+.coevolution-item { border: 1px solid var(--line); border-radius: 9px; padding: 10px; margin: 8px 0; background: var(--paper); }
+.coevolution-item p { margin: 6px 0; line-height: 1.6; }
+.coevolution-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.coevolution-actions { display: flex; gap: 7px; flex-wrap: wrap; }
+.coevolution-list { margin: 8px 0; padding-left: 18px; line-height: 1.8; }
+.coevolution-stale { border-style: dashed; }
+@media (max-width: 700px) { .coevolution-panel { width: 100vw; } }

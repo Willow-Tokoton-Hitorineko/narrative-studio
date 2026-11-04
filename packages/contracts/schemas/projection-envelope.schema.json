@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativestudio.example/schema/projection-envelope.v1.json",
+  "title": "ProjectionEnvelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "source_revision",
+    "projection_revision",
+    "status",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "source_revision": {
+      "type": "string"
+    },
+    "projection_revision": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "current",
+        "stale",
+        "pending",
+        "failed"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "computed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "data": {}
+  }
+}
