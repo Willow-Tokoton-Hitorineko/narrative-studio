@@ -1,21 +1,21 @@
-<img align="right" width="125" src="docs/media/atelier-stage.svg" alt="靛蓝拱窗下的月亮、羽笔与书页">
-
 # Narrative Studio · 写作间
+
+![蓝发人物在旧剧场伏案执笔的非官方二创封面](https://raw.githubusercontent.com/Willow-Tokoton-Hitorineko/narrative-studio/eb578c1dd9b8ce9e4f9aa4f04ce6dac72d3f0432/media/atelier-fanart-cover.png)
 
 **这一句，由你决定要不要改。**
 
 导入一篇旧稿，选中那句一直不满意的话。告诉 AI 你想怎么改，对照候选，再决定要不要换掉原文。也可以带来一句灵感，从人物、关系一路写到开篇。
 
-[看实录短片](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [快速试用](#快速试用) · [开发预览](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.2)
+[看实录短片](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [快速试用](#快速试用) · [源码开发预览](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.2)
 
 ## 一句话是怎么改的
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="docs/media/film-poster.png">
-  <img src="docs/media/author-loop.gif" alt="连续操作实录：选中文本，输入指令，对照候选，确认替换，再撤销写入">
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Willow-Tokoton-Hitorineko/narrative-studio/eb578c1dd9b8ce9e4f9aa4f04ce6dac72d3f0432/media/atelier-fanart-poster.png">
+  <img src="https://raw.githubusercontent.com/Willow-Tokoton-Hitorineko/narrative-studio/eb578c1dd9b8ce9e4f9aa4f04ce6dac72d3f0432/media/atelier-fanart-loop.gif" alt="连续操作实录：选中文本，输入指令，对照候选，确认替换，再撤销写入">
 </picture>
 
-_《末班车没有到站》为虚构样稿。操作在真实工作台完成，生成内容来自离线 Mock。_ [视频与播放控制](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [静态画面](docs/media/film-poster.png)
+_《末班车没有到站》为虚构样稿。操作在真实工作台的本地二创主题中完成，生成内容来自离线 Mock。_ [视频与播放控制](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [静态画面](https://raw.githubusercontent.com/Willow-Tokoton-Hitorineko/narrative-studio/eb578c1dd9b8ce9e4f9aa4f04ce6dac72d3f0432/media/atelier-fanart-poster.png)
 
 - **接着旧稿写**。在光标处续写，或只改选中的一段。采用时保存版本和来源，随时撤销。
 - **从灵感开始**。自由聊，也可以按卡片一步步梳理人物、关系和剧情。确认后把方案带进开篇。
@@ -54,4 +54,4 @@ pnpm test
 
 下一步聚焦长文导入后的续写手感、构思流程和本机交付体验。欢迎用虚构短文提交可复现的反馈。
 
-由 Willow 发起，开发中使用了 AI 编程工具。软件、原创公开素材和示例以 [MIT](LICENSE) 发布。[依赖与素材说明](NOTICE)
+由 Willow 发起，开发中使用了 AI 编程工具。软件、默认视觉和示例以 [MIT](LICENSE) 发布。页首插画及含它的演示为 AI 辅助制作的非官方二创，用于个人非营利展示，独立于软件的 MIT 许可。[二创素材与许可说明](https://willow-tokoton-hitorineko.github.io/narrative-studio/credits.html) · [依赖说明](NOTICE)
