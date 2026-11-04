@@ -6,7 +6,7 @@
 
 导入一篇旧稿，选中那句一直不满意的话。告诉 AI 你想怎么改，对照候选，再决定要不要换掉原文。也可以带来一句灵感，从人物、关系一路写到开篇。
 
-[看实录短片](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [快速试用](#快速试用) · [开发预览](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.1)
+[看实录短片](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [快速试用](#快速试用) · [开发预览](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.2)
 
 ## 一句话是怎么改的
 
