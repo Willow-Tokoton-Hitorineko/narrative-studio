@@ -1,24 +1,25 @@
+<img align="right" width="125" src="docs/media/atelier-stage.svg" alt="靛蓝拱窗下的月亮、羽笔与书页">
+
 # Narrative Studio · 写作间
 
-![Narrative Studio 封面，米色纸页与一只伏在书后的猫](docs/media/cover.svg)
+**这一句，由你决定要不要改。**
 
-**把灵感聊清楚，把正文留在手上。**
+导入一篇旧稿，选中那句一直不满意的话。告诉 AI 你想怎么改，对照候选，再决定要不要换掉原文。也可以带来一句灵感，从人物、关系一路写到开篇。
 
-Narrative Studio 是一款面向中文长篇创作的本地写作工作台。你可以导入一篇旧稿，选中一段让 AI 提出改写，也可以从一句灵感开始，慢慢梳理人物、关系与章节。候选先给你看，确认后才写进正文。
+[看实录短片](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [快速试用](#快速试用) · [开发预览](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.1)
 
-[快速试用](#快速试用) · [公开展示](https://willow-tokoton-hitorineko.github.io/narrative-studio/) · [开发预览发行版](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/releases/tag/v0.1.0-preview.1) · [反馈问题](https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues)
+## 一句话是怎么改的
 
-## 翻开一页
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/media/film-poster.png">
+  <img src="docs/media/author-loop.gif" alt="连续操作实录：选中文本，输入指令，对照候选，确认替换，再撤销写入">
+</picture>
 
-![实拍演示：打开示例稿、提交续写指令、预览候选、确认保存并进入分步构思](docs/media/author-flow.gif)
+_《末班车没有到站》为虚构样稿。操作在真实工作台完成，生成内容来自离线 Mock。_ [视频与播放控制](https://willow-tokoton-hitorineko.github.io/narrative-studio/#film) · [静态画面](docs/media/film-poster.png)
 
-_约 17 秒，Windows Edge 实拍。《末班车没有到站》是虚构样稿。画面中的 Mock 返回固定示例，用于展示操作与授权流程。_ [查看静态画面](docs/media/author-flow.png)
-
-### 两条共创路线，一张写作桌
-
-- **续写旧稿**。导入 TXT 或 Markdown，选中一段或定位光标。讨论走向、生成候选、预览修改，再决定替换、插入或放弃。采纳会保存版本和来源，可撤销。
-- **从灵感起稿**。自由聊想法，或跟随分步卡片填写故事起点、人物、关系与剧情。整理出的方案可以编辑；关系进入正式设定前需要单独确认。
-- **自己写**。在轻量正文编辑器里编辑、保存、撤销和导出。作品保存在本机 Vault，可导出为可读文本。
+- **接着旧稿写**。在光标处续写，或只改选中的一段。采用时保存版本和来源，随时撤销。
+- **从灵感开始**。自由聊，也可以按卡片一步步梳理人物、关系和剧情。确认后把方案带进开篇。
+- **安静写一会儿**。导入 TXT 或 Markdown，在本机写、改、保存，随时导出。
 
 ## 快速试用
 

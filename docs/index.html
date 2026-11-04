@@ -3,54 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Narrative Studio 是一个本地优先的中文写作工作台。续写旧稿，从灵感起稿，由作者决定何时写入正文。">
+  <meta name="description" content="从一句改写，到一部长篇。Narrative Studio 是本地优先的中文写作工作台。">
   <meta property="og:title" content="Narrative Studio · 写作间">
-  <meta property="og:description" content="把灵感聊清楚，把正文留在手上。">
-  <meta property="og:image" content="https://willow-tokoton-hitorineko.github.io/narrative-studio/media/author-flow.png">
-  <meta name="color-scheme" content="light">
-  <link rel="icon" href="media/cover.svg" type="image/svg+xml">
+  <meta property="og:description" content="这一句，由你决定要不要改。">
+  <meta property="og:image" content="https://willow-tokoton-hitorineko.github.io/narrative-studio/media/film-poster.png">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="media/atelier-stage.svg" type="image/svg+xml">
   <title>Narrative Studio · 写作间</title>
   <style>
-    :root{color:#262732;background:#f4ede4;font:16px/1.65 system-ui,sans-serif;--wine:#783b50;--muted:#645761;--paper:#fffaf1;--line:#d9c7be}
-    *{box-sizing:border-box}body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid var(--wine);outline-offset:4px}
-    .shell{max-width:1120px;margin:auto;padding:0 clamp(18px,4vw,44px)}
-    .mast{border-bottom:1px solid var(--line)}.mast .shell{min-height:68px;display:flex;gap:14px;align-items:center;justify-content:space-between}
-    .brand{text-decoration:none;font:600 1.23rem Georgia,serif}.repo{color:var(--wine);font-size:.9rem;text-underline-offset:4px}
-    .hero{position:relative;padding:clamp(40px,8vw,106px) 0 46px}.hero-art{position:absolute;right:1%;top:clamp(12px,4vw,64px);width:clamp(175px,25vw,280px);pointer-events:none}.hero-copy{max-width:72%}.stamp{font-weight:750;color:var(--wine);font-size:.76rem;letter-spacing:.18em}
-    h1{font:600 clamp(2.7rem,7.5vw,5.6rem)/1.04 Georgia,serif;letter-spacing:-.045em;margin:14px 0}
-    h2,h3{font-family:Georgia,"Songti SC","SimSun",serif}h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 14px}h3{margin:10px 0 0}
-    .tagline{font:600 clamp(1.24rem,3vw,1.7rem)/1.45 "Songti SC","SimSun",serif}.lead{max-width:46rem;color:var(--muted)}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{text-decoration:none;display:inline-block;border:1px solid var(--wine);padding:9px 16px;border-radius:7px;color:var(--wine);font-weight:680}.primary{background:var(--wine);color:white}
-    .demo{margin:0 0 56px;padding:clamp(10px,2.3vw,22px);border:1px solid var(--line);border-radius:15px;background:var(--paper);box-shadow:0 12px 30px #40323b18}
-    .demo img{display:block;width:100%;height:auto;border-radius:8px}.demo figcaption{padding:10px 3px 0;color:var(--muted);font-size:.86rem}
-    .routes{padding-bottom:60px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border-top:2px solid var(--wine);padding:18px;background:var(--paper)}.card p{color:var(--muted);margin-bottom:0}
-    footer{border-top:1px solid var(--line);padding:20px 0 38px;color:var(--muted);font-size:.88rem}
-    @media(max-width:680px){.cards{grid-template-columns:1fr}.mast .shell{min-height:54px}.hero{padding-bottom:26px}.hero-art{display:none}.hero-copy{max-width:none}}
+    :root{color-scheme:dark;--night:#131c2e;--cream:#fff4e3;--muted:#c9c7c6;--gold:#e1c597;--line:#9d896457;background:var(--night);color:var(--cream);font:16px/1.7 system-ui,sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 82% 16%,#263c58 0,transparent 46%),linear-gradient(152deg,#141d30,#161b29 72%,#25232f)}
+    a{color:inherit;text-underline-offset:4px}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    .shell{max-width:1170px;margin:auto;padding-inline:clamp(18px,5vw,54px)}
+    header{border-bottom:1px solid var(--line)}header .shell{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:66px}
+    .brand{font:600 1.28rem Georgia,serif;text-decoration:none}.stamp{font-size:.73rem;letter-spacing:.15em;color:var(--gold);font-weight:650}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(120px,23vw,270px);gap:28px;align-items:center;padding:clamp(28px,6vw,68px) 0 30px}
+    .hero img{width:100%;height:auto;filter:drop-shadow(0 12px 18px #09101a80)}h1,h2,h3{font-family:"Songti SC","SimSun",Georgia,serif}
+    h1{font-size:clamp(2.55rem,6vw,5.1rem);line-height:1.12;letter-spacing:-.035em;margin:12px 0 16px}
+    .lead{color:var(--muted);font-size:clamp(.96rem,1.7vw,1.1rem);max-width:38rem;margin:0 0 22px}
+    .actions{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-block;border:1px solid var(--line);border-radius:5px;padding:7px 15px;text-decoration:none;font-size:.92rem;font-weight:660}.primary{background:var(--gold);color:#141d30;border-color:var(--gold)}
+    .film{margin:0 0 50px}.screen{position:relative;border:1px solid #bea87c8c;box-shadow:0 15px 42px #080f19ac;border-radius:12px;overflow:hidden;background:#172237}
+    video{display:block;width:100%;height:auto;aspect-ratio:8/5}.play{position:absolute;inset:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer}.play[hidden]{display:none}
+    .play span{display:grid;grid-auto-flow:column;gap:10px;align-items:center;border:1px solid #f1dbac80;border-radius:99px;background:#172237f0;color:var(--cream);padding:11px 20px;font:650 .93rem system-ui;box-shadow:0 8px 32px #050b1680}
+    figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 0;color:var(--muted);font-size:.85rem}
+    h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 16px}.routes{padding-bottom:52px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{padding:17px 18px;border:1px solid var(--line);border-top-color:var(--gold);background:#ffffff05;border-radius:6px}.card h3{font-size:1.2rem;margin:5px 0}.card p{font-size:.92rem;color:var(--muted);margin:0}
+    footer{padding:18px 0 32px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+    @media(max-width:650px){.hero{display:block;padding-top:33px}.hero img{display:none}.cards{grid-template-columns:1fr}.film{margin-bottom:33px}figcaption{display:block}.play span{padding:7px 13px}}
   </style>
 </head>
 <body>
-  <header class="mast"><div class="shell"><a class="brand" href="./">Narrative Studio</a><a class="repo" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio">GitHub ↗</a></div></header>
+  <header><div class="shell"><a class="brand" href="./">Narrative Studio</a><a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio">GitHub ↗</a></div></header>
   <main class="shell">
-    <section class="hero" aria-labelledby="project">
-      <img class="hero-art" src="media/mascot.svg" alt="" width="300" height="290"><div class="hero-copy"><div class="stamp">写作间 / OPEN SOURCE / 开发预览</div>
-      <h1 id="project">Narrative Studio</h1>
-      <p class="tagline">把灵感聊清楚，把正文留在手上。</p>
-      <p class="lead">给中文长篇创作者的一张本地写作桌。带来一篇没写完的稿子，或带来一句还不成形的灵感。你可以先讨论、再看候选，最后自己决定要留下哪一段。</p>
-      <div class="actions"><a class="btn primary" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio#快速试用">在本机试用</a><a class="btn" href="#demo">看续写演示</a></div></div>
+    <section class="hero">
+      <div>
+        <div class="stamp">写作间 / MIT 开源 / 开发预览</div>
+        <h1>这一句，由你决定<br>要不要改。</h1>
+        <p class="lead">打开一份旧稿，选中那句一直不满意的话。给出你的改法，对照候选，再决定要不要换掉原文。也可以从一句灵感开始，慢慢写成一部长篇。</p>
+        <div class="actions"><a class="btn primary" href="#film">看一次实际改写</a><a class="btn" href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio#快速试用">在本机试用</a></div>
+      </div>
+      <img src="media/atelier-stage.svg" alt="" width="300" height="290">
     </section>
-    <figure class="demo" id="demo">
-      <picture><source media="(prefers-reduced-motion: reduce)" srcset="media/author-flow.png"><img src="media/author-flow.gif" width="1100" height="690" alt="从虚构样稿发起续写，查看候选，确认写入，再进入分步构思"></picture>
-      <figcaption>Windows Edge 实拍。画面使用虚构样稿与 Mock 固定示例。<a href="media/author-flow.png">静态画面</a></figcaption>
+    <figure class="film" id="film">
+      <div class="screen">
+        <video controls playsinline preload="none" poster="media/film-poster.png" width="1280" height="800" aria-label="实录演示：选择一句正文，输入改写指令，比较候选，确认替换并撤销">
+          <source src="media/author-film.mp4" type="video/mp4">
+          <a href="media/author-film.mp4">打开演示视频</a>
+        </video>
+        <button class="play" type="button" hidden><span>▶　播放工作台实录</span></button>
+      </div>
+      <figcaption><span>《末班车没有到站》虚构样稿 · 连续实录 · 生成结果来自离线 Mock</span><a href="media/film-poster.png">查看静态画面</a></figcaption>
     </figure>
-    <section class="routes" aria-labelledby="routes">
-      <h2 id="routes">今天想怎么写？</h2>
+    <section class="routes">
+      <h2>接着写，或者重新开始</h2>
       <div class="cards">
-        <article class="card"><span class="stamp">01 / CONTINUE</span><h3>接着旧稿写</h3><p>导入 TXT 或 Markdown，定位光标或选中文本。先看候选，确认后保存，也能撤销。</p></article>
-        <article class="card"><span class="stamp">02 / PLAN</span><h3>从一句灵感开始</h3><p>自由讨论，或按卡片梳理人物、关系和剧情。确认后把方案带进开篇。</p></article>
-        <article class="card"><span class="stamp">03 / EDIT</span><h3>留点空间给自己</h3><p>只打开正文也可以写、改、保存和导出。私人稿件保存在本机 Vault。</p></article>
+        <article class="card"><span class="stamp">01 / 旧稿</span><h3>改一句，续一段</h3><p>选区改写，或从光标位置续写。每次采用都会保存版本和来源。</p></article>
+        <article class="card"><span class="stamp">02 / 灵感</span><h3>先把故事想清楚</h3><p>自由讨论，也可按卡片梳理人物、关系和剧情，再带着方案写开篇。</p></article>
+        <article class="card"><span class="stamp">03 / 正文</span><h3>只写字也可以</h3><p>导入 TXT 或 Markdown，在本机写、改、保存和导出。</p></article>
       </div>
     </section>
   </main>
-  <footer><div class="shell">Willow 的猫箱 · MIT 开源开发预览 · <a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues">反馈与建议</a></div></footer>
+  <footer><div class="shell">Willow 的猫箱 · 开发预览 · <a href="https://github.com/Willow-Tokoton-Hitorineko/narrative-studio/issues">分享试用反馈</a></div></footer>
+  <script>
+    const video = document.querySelector('video');
+    const play = document.querySelector('.play');
+    play.hidden = false;
+    play.addEventListener('click', async () => {
+      try {
+        await video.play();
+        play.hidden = true;
+        video.focus();
+      } catch {
+        play.hidden = true;
+        video.focus();
+      }
+    });
+    video.addEventListener('play', () => { play.hidden = true; });
+  </script>
 </body>
 </html>
